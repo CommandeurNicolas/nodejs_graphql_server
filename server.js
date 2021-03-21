@@ -16,6 +16,7 @@ admin.initializeApp({
 // Construct a schema, using graphql schema language
 const typeDefs = gql`
     type Product {
+        name: String
         price: String
         quantity: String
         weight: String
