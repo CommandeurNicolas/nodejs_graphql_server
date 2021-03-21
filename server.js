@@ -17,7 +17,7 @@ admin.initializeApp({
 const typeDefs = gql`
     type Product {
         price: String
-        quatity: String
+        quantity: String
         weight: String
     }
     type Query {
