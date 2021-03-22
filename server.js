@@ -18,7 +18,6 @@ const typeDefs = gql`
     type Product {
         name: String
         price: String
-        quantity: String
         weight: String
     }
     type Query {
@@ -48,16 +47,8 @@ server.applyMiddleware({app, path: "/graphql", cors: true})
 
 exports.graphql = functions.https.onRequest(app)
 
-var root = {
-    products: () => {
-        return "yo";
-    },
-};  
-
-// var app = express();
 app.use('/graphql', graphqlHTTP({
     schema: typeDefs,
-    rootValue: root,
     graphiql: true,
 }));
 app.listen(port);
