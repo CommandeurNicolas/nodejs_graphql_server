@@ -1,19 +1,18 @@
 const port = process.env.PORT || 4000;
 
 const express = require('express');
-const admin = require("firebase-admin");
+const { graphqlHTTP } = require('express-graphql');
+
 const serviceAccount = require("./serviceKey.json");
+const admin = require("firebase-admin");
 const functions = require('firebase-functions')
 const { ApolloServer, gql } = require("apollo-server-express")
-const { graphqlHTTP } = require('express-graphql');
-// var { buildSchema } = require('graphql');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://marketplace-1fbc0-default-rtdb.firebaseio.com/"
 });
 
-// Construct a schema, using graphql schema language
 const typeDefs = gql`
     type Product {
         name: String
