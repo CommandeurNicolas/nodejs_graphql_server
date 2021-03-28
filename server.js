@@ -18,6 +18,7 @@ const typeDefs = gql`
         name: String
         price: String
         weight: String
+        type: String
         image: String
     }
     type Query {
