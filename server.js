@@ -10,7 +10,7 @@ const { ApolloServer, gql } = require("apollo-server-express")
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://marketplace-1fbc0-default-rtdb.firebaseio.com/"
+  databaseURL: "your_firebase_database_link"
 });
 
 const typeDefs = gql`
